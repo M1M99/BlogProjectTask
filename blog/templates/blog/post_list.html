@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+    All Posts - Mini Blog
+{% endblock %}
+
+{% block content %}
+
+    <h1>All Posts</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>DateTime</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for p in posts %}
+            {% include 'blog/_post_row.html' with p=p %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
